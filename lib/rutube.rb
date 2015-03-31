@@ -26,6 +26,7 @@ module Rutube
   module Errors
 
     class ConnectionRefused < StandardError; end
+    class ServerError < StandardError; end
 
   end
 

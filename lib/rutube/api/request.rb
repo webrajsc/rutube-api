@@ -22,6 +22,8 @@ module Rutube
           @response ||= Response.new open(url).read
         rescue Errno::ECONNREFUSED
           raise Errors::ConnectionRefused
+        rescue OpenURI::HTTPError
+          raise Errors::ServerError
         end
       end
 
