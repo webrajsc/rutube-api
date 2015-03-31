@@ -5,7 +5,7 @@
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'rutube-api', github: 'webrajsc/rutube-api'
+gem 'rutube', github: 'webrajsc/rutube-api'
 ```
 
 And then execute:
