@@ -27,5 +27,9 @@ module Rutube
       end
     end
 
+    def oembed
+      @oembed ||= Oembed.get video_url
+    end
+
   end
 end
