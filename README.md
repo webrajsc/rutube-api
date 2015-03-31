@@ -16,62 +16,43 @@ And then execute:
 
 ### Searching
 
-```
+```ruby
 Rutube::Video.search 'zkd'
-```
-
-```
 Rutube::Video.search 'zkd', only_hd: :checked
-```
-
-```
 Rutube::Tag.search 'zkd'
-```
-
-```
 Rutube::User.search 'zkd'
 ```
 
 ### Video
 
-```
+```ruby
 v = Rutube::Video.get 'f3992e6fb86edcf64223ec633fa3ed08'
 v.title #=> "Comedy Woman: сезон 1, выпуск 1"
-```
 
-```
 Rutube::Video.by_person 349
-```
-
-```
 Rutube::Video.by_tag 8
-```
-
-```
 Rutube::Video.by_tv 27
 ```
 
 ### User
 
-```
+```ruby
 u = Rutube::User.get 349
 u.name #=> "Надя Куликова"
 ```
 
 ### Tv
 
-```
+```ruby
 Rutube::Tv.all
-```
 
-```
 t = Rutube::Tv.get 27
 t.name #=> "Реальные пацаны"
 ```
 
 ### Person
 
-```
+```ruby
 p = Rutube::Person.get 789
 p.name #=> "Nефть "
 ```
