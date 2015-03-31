@@ -3,6 +3,8 @@ module Rutube
 
     class Request
 
+      attr_reader :response
+
       def initialize(url=nil, request_params={})
         @url = url
         @url_builder = Api::UrlBuilder.new request_params
@@ -16,7 +18,11 @@ module Rutube
       def make
         url = @url || @url_builder.inspect
         puts "Performing request: #{url}"
-        @response ||= Response.new open(url).read
+        begin
+          @response ||= Response.new open(url).read
+        rescue Errno::ECONNREFUSED
+          raise Errors::ConnectionRefused
+        end
       end
 
     end

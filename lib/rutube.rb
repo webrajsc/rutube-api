@@ -23,4 +23,10 @@ module Rutube
     yield(configuration) if block_given?
   end
 
+  module Errors
+
+    class ConnectionRefused < StandardError; end
+
+  end
+
 end
