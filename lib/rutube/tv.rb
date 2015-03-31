@@ -23,5 +23,11 @@ module Rutube
       self.new Api.request.metainfo.tv(tv_id).make.meta
     end
 
+    def self.by_studio(studio_id)
+      Api.request.metainfo.studio(studio_id).tv.make.map! do |tv_data|
+        self.new tv_data
+      end
+    end
+
   end
 end
